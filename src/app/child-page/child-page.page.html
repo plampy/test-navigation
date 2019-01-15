@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>child-page</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="navController.goBack()">Go Back</ion-button>
+  <ion-button (click)="navController.navigateBack(['home'])">Navigate Back</ion-button>
+  <ion-button (click)="router.navigate(['home'])">Route Back</ion-button>
+</ion-content>
