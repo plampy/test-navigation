@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 
 @Component({
@@ -8,9 +8,13 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['./child-page.page.scss']
 })
 export class ChildPagePage implements OnInit {
-  constructor(public navController: NavController, public router: Router) {}
+  constructor(public navController: NavController, public router: Router, public route: ActivatedRoute) {}
 
   ngOnInit() {
     console.log('Child: ngOnInit');
+  }
+
+  go(route: string) {
+    this.router.navigate(['../home'], { relativeTo: this.route });
   }
 }
